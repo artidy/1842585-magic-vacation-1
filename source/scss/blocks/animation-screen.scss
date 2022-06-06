@@ -35,3 +35,20 @@
     transform: scaleY(1);
   }
 }
+
+.line__text-animate {
+  display: flex;
+  overflow: hidden;
+  padding-top: 0.2rem;
+
+  .letter__text-animate {
+    overflow: initial;
+    transform: translate3d(0, 1.2em, 0);
+  }
+}
+
+.screen.active {
+  .letter__text-animate {
+    transform: translate3d(0, 0, 0);
+  }
+}
