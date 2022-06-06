@@ -4,8 +4,8 @@ const DEFAULT_SETTINGS = {
   timingFunctions: [`ease-in`, `ease-out`, `ease`],
   lineSeparator: ` `,
   containerTag: `span`,
-  lineClass: `line`,
-  letterClass: `letter`,
+  lineClass: `line__text-animate`,
+  letterClass: `letter__text-animate`,
   lineDelay: 0.2,
   maxLetterDelay: 0.2,
   letterDelayDigit: 1
@@ -43,6 +43,10 @@ export const modifyAnimateText = (textNode, settings = {}) => {
 
       charElement.textContent = letter;
       charElement.style.transition = `${property} ${duration}s ${timingFunction} ${letterDelay}s`;
+
+      if (letter === ` `) {
+        charElement.style.whiteSpace = `pre`;
+      }
 
       charElement.classList.add(letterClass);
       lineElement.append(charElement);

@@ -1,12 +1,13 @@
 import {modifyAnimateText} from "../functions";
 
 export default () => {
-  const animateTitle = document.querySelector(`.intro__title`);
+  const introTitle = document.querySelector(`.intro__title`);
+  const introDate = document.querySelector(`.intro__date`);
 
   window.addEventListener(`load`, function () {
     document.body.classList.add(`content_loaded`);
   });
 
-  animateTitle.classList.add(`animate-title`);
-  modifyAnimateText(animateTitle);
+  modifyAnimateText(introTitle);
+  modifyAnimateText(introDate, {lineSeparator: `,`});
 };

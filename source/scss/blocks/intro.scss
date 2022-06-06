@@ -33,20 +33,12 @@
   line-height: 0.906;
   letter-spacing: -0.04em;
 
-  .line {
-    display: flex;
-    overflow: hidden;
-    padding-top: 0.2rem;
-  }
-
-  .line:first-child {
+  .line__text-animate:first-child {
     padding-top: 2rem;
   }
 
-  .letter {
-    overflow: initial;
+  .letter__text-animate {
     text-indent: -0.01em;
-    transform: translate3d(0, 1.2em, 0);
   }
 
   @media (min-width: $stop-scaling) {
@@ -68,9 +60,22 @@
   }
 }
 
-.screen--intro.active .intro__title {
-  .letter {
-    transform: translate3d(0, 0, 0);
+.line__text-animate {
+  display: flex;
+  overflow: hidden;
+  padding-top: 0.2rem;
+}
+
+.letter__text-animate {
+  overflow: initial;
+  transform: translate3d(0, 1.2em, 0);
+}
+
+.screen--intro.active {
+  .intro__title, .intro__date {
+    .letter__text-animate {
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
